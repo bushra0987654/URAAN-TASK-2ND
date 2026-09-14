@@ -1,0 +1,398 @@
+/* ==========================================================================
+   Catchhub landing page — stylesheet
+   Font:  Poppins (Google Fonts) — matches the geometric sans in the design
+   ========================================================================== */
+
+:root {
+    /* ---- Colors sampled directly from the reference design ---- */
+    --color-bg: #f4f4f5;              /* page background (light grey) */
+    --color-bg-alt: #ffffff;          /* alternating section background */
+    --color-text: #1a1a1a;            /* headings */
+    --color-text-muted: #737373;      /* paragraph copy */
+    --color-android: #aac93f;         /* green "Android App Store" badge */
+    --color-android-dark: #97b431;    /* hover shade for the green badge */
+    --color-ios: #060708;             /* black "App Store" badge */
+    --color-link: #4a9cf5;            /* "Contact us" link blue */
+
+    /* ---- Layout ---- */
+    --content-width: 1180px;
+    --section-padding: 6.5rem;
+}
+
+/* ---- Reset & base ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ==========================================================================
+   Store badges (Android / iOS) — reused in the hero and the footer
+   ========================================================================== */
+
+.store-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.store-btn:hover,
+.store-btn:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.16);
+}
+
+.store-btn:focus-visible {
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+}
+
+.store-btn--android {
+    background: var(--color-android);
+}
+
+.store-btn--android:hover {
+    background: var(--color-android-dark);
+}
+
+.store-btn--ios {
+    background: var(--color-ios);
+}
+
+.store-btn__icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.store-btn__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.store-btn__text small {
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.store-btn__text strong {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Header / Hero
+   ========================================================================== */
+
+.hero {
+    background: linear-gradient(180deg, #e9e9ea 0%, #f7f7f8 55%, #ffffff 100%);
+    padding: 5rem 0 7rem;
+    overflow: hidden;
+}
+
+.hero__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.hero__content {
+    max-width: 560px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.hero__logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.store-buttons {
+    justify-content: center;
+}
+
+.hero__logo {
+    width: 230px;
+    margin-bottom: 1.75rem;
+}
+
+.hero__tagline {
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 0.75rem;
+}
+
+.hero__subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+.hero__image {
+    width: 100%;
+    max-width: 460px;
+}
+
+/* ==========================================================================
+   Feature sections (Channels / Messages / In Future)
+   ========================================================================== */
+
+.feature {
+    position: relative;
+    padding: var(--section-padding) 0;
+}
+
+.feature--channels {
+    background: var(--color-bg-alt);
+}
+
+.feature--messages {
+    background: var(--color-bg);
+}
+
+.feature--future {
+    background: var(--color-bg-alt);
+    padding-bottom: 8rem;
+}
+
+/* Soft diagonal divider between sections, echoing the flowing shapes
+   in the reference design without requiring extra background images */
+.feature::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: inherit;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.feature--messages::before {
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.feature__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.feature__image {
+    flex: 1 1 50%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature__text {
+    flex: 1 1 40%;
+    max-width: 460px;
+    text-align: center;
+}
+
+.feature__text h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.feature__text p {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 34ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Messages section mirrors Channels: text on the left, phones on the right.
+   No layout flip needed — the source order already reads left-to-right. */
+
+/* In Future: category icon strip sits above the image/text row */
+.future__icons {
+    max-width: 900px;
+    margin: 0 auto 4.5rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+    background: linear-gradient(180deg, #ffffff 0%, #eeeeef 100%);
+    padding: 5rem 0 4rem;
+    text-align: center;
+}
+
+.site-footer__lead {
+    font-size: 1.2rem;
+    margin-bottom: 1.75rem;
+}
+
+.site-footer .store-buttons {
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+}
+
+.site-footer__contact {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.site-footer__contact a {
+    color: var(--color-link);
+    font-weight: 500;
+}
+
+.site-footer__contact a:hover,
+.site-footer__contact a:focus-visible {
+    text-decoration: underline;
+}
+
+.site-footer__brand {
+    width: 60px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Responsive breakpoints
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+    :root {
+        --section-padding: 4.5rem;
+    }
+
+    .hero {
+        padding: 3.5rem 0 5rem;
+    }
+
+    .hero__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero__content {
+        max-width: 100%;
+    }
+
+    .hero__tagline {
+        white-space: normal;
+    }
+
+    .hero__logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .store-buttons {
+        justify-content: center;
+    }
+
+    .feature__inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .feature--messages .feature__inner {
+        flex-direction: column-reverse;
+    }
+
+    .feature__text {
+        max-width: 100%;
+    }
+
+    .feature__text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+    .wrap {
+        padding: 0 1.25rem;
+    }
+
+    .hero__tagline {
+        font-size: 1.15rem;
+        letter-spacing: 0.03em;
+        white-space: normal;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .feature__text h2 {
+        font-size: 1.4rem;
+        letter-spacing: 0.1em;
+    }
+
+    .feature__text p {
+        font-size: 1rem;
+    }
+
+    .store-btn {
+        padding: 0.55rem 1rem;
+    }
+
+    .store-btn__text strong {
+        font-size: 1rem;
+    }
+
+    .future__icons {
+        margin-bottom: 3rem;
+    }
+}
