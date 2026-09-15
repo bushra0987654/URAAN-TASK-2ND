@@ -16,7 +16,7 @@
 
     /* ---- Layout ---- */
     --content-width: 1180px;
-    --section-padding: 6.5rem;
+    --section-padding: 5rem;
 }
 
 /* ---- Reset & base ---- */
@@ -67,11 +67,11 @@ a {
 .store-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.65rem 1.4rem;
-    border-radius: 8px;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 7px;
     color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -99,25 +99,25 @@ a {
 }
 
 .store-btn__icon {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
 }
 
 .store-btn__text {
     display: flex;
     flex-direction: column;
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .store-btn__text small {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: 400;
     opacity: 0.9;
 }
 
 .store-btn__text strong {
-    font-size: 1.15rem;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
@@ -127,7 +127,7 @@ a {
 
 .hero {
     background: linear-gradient(180deg, #e9e9ea 0%, #f7f7f8 55%, #ffffff 100%);
-    padding: 5rem 0 7rem;
+    padding: 3.5rem 0 5rem;
     overflow: hidden;
 }
 
@@ -161,7 +161,7 @@ a {
 .hero__tagline {
     font-size: 1.55rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
     white-space: nowrap;
     margin-bottom: 0.75rem;
@@ -197,7 +197,7 @@ a {
 
 .feature--future {
     background: var(--color-bg-alt);
-    padding-bottom: 8rem;
+    padding-bottom: 6rem;
 }
 
 /* Soft diagonal divider between sections, echoing the flowing shapes
@@ -221,7 +221,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 .feature__image {
@@ -240,7 +240,7 @@ a {
 .feature__text h2 {
     font-size: 1.7rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 1.25rem;
 }
@@ -256,10 +256,11 @@ a {
 /* Messages section mirrors Channels: text on the left, phones on the right.
    No layout flip needed — the source order already reads left-to-right. */
 
-/* In Future: category icon strip sits above the image/text row */
+/* In Future: category icon strip, now sitting above the heading
+   inside the text column (matches its position in the reference design) */
 .future__icons {
-    max-width: 900px;
-    margin: 0 auto 4.5rem;
+    max-width: 320px;
+    margin: 0 auto 2rem;
 }
 
 /* ==========================================================================
@@ -385,14 +386,15 @@ a {
     }
 
     .store-btn {
-        padding: 0.55rem 1rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .store-btn__text strong {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .future__icons {
-        margin-bottom: 3rem;
+        max-width: 260px;
+        margin-bottom: 1.5rem;
     }
 }
