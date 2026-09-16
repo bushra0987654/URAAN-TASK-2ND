@@ -88,10 +88,24 @@ a {
 
 .store-btn--android {
     background: var(--color-android);
+    padding: 0.35rem 0.75rem;
 }
 
 .store-btn--android:hover {
     background: var(--color-android-dark);
+}
+
+.store-btn--android .store-btn__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.store-btn--android .store-btn__text small {
+    font-size: 0.55rem;
+}
+
+.store-btn--android .store-btn__text strong {
+    font-size: 0.8rem;
 }
 
 .store-btn--ios {
