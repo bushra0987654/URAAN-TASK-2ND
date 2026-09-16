@@ -221,10 +221,11 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    /* gap: 3rem; */
 }
 
 .feature__image {
+   
     flex: 1 1 50%;
     max-width: 400px;
     margin-left: auto;
@@ -248,7 +249,7 @@ a {
 .feature__text p {
     font-size: 1.15rem;
     color: var(--color-text-muted);
-    max-width: 34ch;
+    max-width: 28ch;
     margin-left: auto;
     margin-right: auto;
 }
@@ -259,8 +260,11 @@ a {
 /* In Future: category icon strip, now sitting above the heading
    inside the text column (matches its position in the reference design) */
 .future__icons {
-    max-width: 320px;
+    max-width: 450px;
     margin: 0 auto 2rem;
+     position:absolute;
+    top: 150px;
+    left: 380px;
 }
 
 /* ==========================================================================
